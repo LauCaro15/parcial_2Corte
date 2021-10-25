@@ -5,23 +5,30 @@
     <thead class="thead-dark">
       <tr>
         <th scope="col">Código</th>
-        <th scope="col">Categoría</th>
-        <th scope="col">Descripción</th>
-        <th scope="col">Opciones</th>
+        <th scope="col">Rut</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Email</th>
+        <th scope="col">Direccion</th>
+        <th scope="col">Especialidad</th>
       </tr>
     </thead>
 
     <tbody>
-      @foreach($categories as $category)
+      @foreach($doctors as $doctor)
       <tr>
-        <th scope= "row">{{ $category -> id}}</th>
-        <td>{{ $category -> name}}</td>
-        <td>{{ $category -> description}}</td>
+        <th scope= "row">{{ $doctor -> id}}</th>
+        <td>{{ $doctor -> RUT}}</td>
+        <td>{{ $doctor -> name}}</td>
+        <td>{{ $doctor -> lastname}}</td>
+        <td>{{ $doctor -> email}}</td>
+        <td>{{ $doctor -> direccion}}</td>
+        <td>{{ $doctor -> especialidad}}</td>
         <td>
-          <a href="{{ route('category.show',$category -> id)}}" class="btn btn-info">Ver</a>
-          <a href="{{ route('category.edit',$category -> id)}}" class="btn btn-info">Editar</a>
+          <a href="{{ route('category.show',$doctor -> RUT)}}" class="btn btn-info">Ver</a>
+          <a href="{{ route('category.edit',$doctor -> RUT)}}" class="btn btn-info">Editar</a>
           <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"
-          data-id="{{ $category->id }}">
+          data-id="{{ $doctor->id }}">
             Eliminar
           </button>
         </td>
@@ -34,8 +41,7 @@
   <button class="btn btn-info" href="{{ URL::previous() }}">Regresar</button>
 </div>
 @endsection
-{{ $categories->links() }}
-
+{{ $doctors->links() }}
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -53,8 +59,8 @@
         <button type="button" class="btn btn-secondary" data-dismiss="modal">
           Cancelar
         </button>
-        <form id="formDelete" method="POST" action="{{ route('category.destroy', 0) }}" 
-        data-action="{{ route('category.destroy', 0) }}">
+        <form id="formDelete" method="POST" action="{{ route('doctor.destroy', 0) }}" 
+        data-action="{{ route('doctor.destroy', 0) }}">
         @method('DELETE')
         @csrf
           <button type="submit" class="btn btn-danger btn-sm">Confirmar</button>
