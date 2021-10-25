@@ -1,23 +1,23 @@
 @csrf    
 <div class="form-group mb-3">        
     <input type="type" class="form-control" name ="RUT" id ="RUT"
-    placeholder="RUT" value= "{{old('RUT',$doctor->RUT)}}" >
+    placeholder="RUT" >
 </div>
 <div class="form-group mb-3">        
     <input type="type" class="form-control" name ="name" id ="name"
-    placeholder="Nombre" value= "{{old('name',$doctor->name)}}" >
+    placeholder="Nombre" >
 </div>
 <div class="form-group mb-3">        
     <input type="type" class="form-control" name ="lastname" id ="lastname"
-    placeholder="Apellido" value= "{{old('lastname',$doctor->lastname)}}" >
+    placeholder="Apellido">
 </div>
 <div class="form-group mb-3">        
     <input type="type" class="form-control" name ="email" id ="email"
-    placeholder="Email" value= "{{old('email',$doctor->email)}}" >
+    placeholder="Email">
 </div>
 <div class="form-group mb-3">        
     <input type="type" class="form-control" name ="direccion" id ="direccion"
-    placeholder="Direccion" value= "{{old('direccion',$doctor->direccion)}}" >
+    placeholder="Direccion" >
 </div>
 <div class="form-group mb-3">
     <select name="especialidad" id="especialidad">

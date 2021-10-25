@@ -25,8 +25,8 @@
         <td>{{ $doctor -> direccion}}</td>
         <td>{{ $doctor -> especialidad}}</td>
         <td>
-          <a href="{{ route('category.show',$doctor -> RUT)}}" class="btn btn-info">Ver</a>
-          <a href="{{ route('category.edit',$doctor -> RUT)}}" class="btn btn-info">Editar</a>
+          <a href="{{ route('doctor.show',$doctor -> id)}}" class="btn btn-info">Ver</a>
+          <a href="{{ route('doctor.edit',$doctor -> id)}}" class="btn btn-info">Editar</a>
           <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"
           data-id="{{ $doctor->id }}">
             Eliminar

@@ -16,7 +16,7 @@ class DoctorController extends Controller
     public function index()
     {
         $doctors = Doctor::orderBy('name','ASC')-> paginate(10);
-        return view('dashboard.doctor.index', ['doctors'=>$doctors]);
+        return view('dashboard.doctor.index', ['doctors'=> $doctors]);
     }
 
     /**
